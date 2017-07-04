@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oVe-OC-erN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="YUW-AV-r4G"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-6l-lSg">
+                                <rect key="frame" x="168.5" y="402" width="37" height="34"/>
+                                <state key="normal" title="识别">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRecognizeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rG2-WC-GI5"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PTW-6p-nB3">
+                                <rect key="frame" x="0.0" y="444" width="375" height="223"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Am7-Mi-Jng">
+                                <rect key="frame" x="177" y="409" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Omf-6l-lSg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="All-zY-yIZ"/>
+                            <constraint firstItem="Am7-Mi-Jng" firstAttribute="centerX" secondItem="Omf-6l-lSg" secondAttribute="centerX" id="BkE-J0-K08"/>
+                            <constraint firstItem="PTW-6p-nB3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L0O-a6-7cJ"/>
+                            <constraint firstAttribute="trailing" secondItem="oVe-OC-erN" secondAttribute="trailing" id="MxE-QG-w8u"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PTW-6p-nB3" secondAttribute="bottom" id="VD8-Si-LiT"/>
+                            <constraint firstItem="Omf-6l-lSg" firstAttribute="top" secondItem="oVe-OC-erN" secondAttribute="bottom" constant="27" id="eWz-vl-v0j"/>
+                            <constraint firstItem="oVe-OC-erN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gxm-At-cCm"/>
+                            <constraint firstItem="PTW-6p-nB3" firstAttribute="top" secondItem="Omf-6l-lSg" secondAttribute="bottom" constant="8" id="jOk-vo-aJb"/>
+                            <constraint firstAttribute="trailing" secondItem="PTW-6p-nB3" secondAttribute="trailing" id="tgo-Cy-YuD"/>
+                            <constraint firstItem="oVe-OC-erN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="vwE-OH-Kkg"/>
+                            <constraint firstItem="Am7-Mi-Jng" firstAttribute="centerY" secondItem="Omf-6l-lSg" secondAttribute="centerY" id="zJd-R6-GCp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="oVe-OC-erN" id="pBC-GT-ffH"/>
+                        <outlet property="loadingView" destination="Am7-Mi-Jng" id="733-H0-BJR"/>
+                        <outlet property="recognizeBtn" destination="Omf-6l-lSg" id="4cA-QY-OpN"/>
+                        <outlet property="resultTV" destination="PTW-6p-nB3" id="mvS-pL-3Jo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
